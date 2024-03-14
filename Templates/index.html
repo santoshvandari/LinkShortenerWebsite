@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/static/style.css">
+    <script defer src="/static/script.js"></script>
 </head>
 <body>
+    <div class="wrapper">
+        <h1>URL Shortner</h1>
+        <div class="form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="url" name="url" id="url" placeholder="Enter URL">
+               <button type="submit">Shorten</button>
+            </form>
+        </div>
+        {% if shorternurldata %}
+        <div class="result">
+            {% if shorternurldata.error %}
+            <h3>Something went Wrong!! Please Try Again.</h3>
+            {% elif shorternurldata.shorternurl %}
+            <h3>Shorten URL:</h3>
+            <p class="success"></p>
+            <input id='shortedurl' type="text" value="{{shorternurldata.shorternurl}}" readonly>
+            <br/><button id="copybtn">Copy</button>        
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
     
 </body>
 </html>
