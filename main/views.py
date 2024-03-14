@@ -11,8 +11,11 @@ def home(request):
         shorternurldata={}
         try:
             obj = URLTable(url=url,short_url=shorten)
+            print(shorten)
+            print(obj)
             obj.save()
             shorternurl=request.build_absolute_uri('/')+"t/"+shorten
+            print(shorternurl)
             shorternurldata={
                 "shorternurl" : shorternurl
             }
