@@ -21,7 +21,7 @@ You System must have the following things to use this Blog App.
 Follow the mentioned procedure to run this project in your local system.
  - Clone or Download the Repository
 ```bash
-    git https://github.com/santoshvandari/LinkShortenerWebsite
+    git clone https://github.com/santoshvandari/LinkShortenerWebsite
     cd LinkShortenerWebsite
 ```
  - Create the Virtual Environment Before installing the requirements. 
